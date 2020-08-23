@@ -1,0 +1,17 @@
+/* line 1, ../sass/main.scss */
+body .front .container {
+  display: flex;
+  height: 600px;
+  width: 800px;
+}
+/* line 12, ../sass/main.scss */
+body .container .slack {
+  position: relative;
+  display: block;
+  margin: auto;
+  width: 70%;
+}
+.control span, .control select {
+  min-width: 100%;
+  overflow: hidden;
+}
