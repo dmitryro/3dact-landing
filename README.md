@@ -1,4 +1,4 @@
-# 🧠 french ai
+# 🧠 3dact.com
 ![Deploy to GitHub Pages](https://github.com/french-ai/website/workflows/Deploy%20to%20GitHub%20Pages/badge.svg)
 
 [Website](https://french-ai.github.io/website/)
