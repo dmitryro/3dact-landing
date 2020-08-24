@@ -2,21 +2,19 @@
   <div class="column is-one-third">
     <div v-tilt class="box">
       <div class="card-content">
-        <div class="media">
+        <div class="media card-adjusted">
           <div class="media-content  has-text-centered">
             <p class="title is-4">{{ title }}</p>
           </div>
         </div>
         <div class="content">
           <p id="desc">{{ description }}</p>
-          <p class="subtitle is-6" style="font-size:0.8em;">{{ packagenote }}</p>
+          <p class="subtitle is-6" style="font-size:0.8em;margin-top:-0.8em">{{ packagenote }}</p>
 
 
           <nav class="level is-mobile">
-           <div class="columns">
-            <div class="column is-full">
 
-            <ul class="has-text-left"  style="list-style: none;list-style-type: none;">
+            <ul class="has-text-left" style="  list-style: none;  list-style-type: none; font-size:0.95em;">
             <div class="columns is-multiline is-mobile" v-for="item in items" :key="item">
                  <li>
                          <div class="is-full media-content  has-text-left">
@@ -28,8 +26,6 @@
                  </li>
             </div>
             </ul>
-            </div>
-            </div>
           </nav>
 
           <nav class="level is-mobile">

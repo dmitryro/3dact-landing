@@ -24,6 +24,15 @@
 
 
             <b-navbar-dropdown tag="router-link" :to="{ name: 'products' }" label="Product"  class="navbar-item has-dropdown" style="z-index: 100;">
+                  <a class="navbar-item" style="z-index: 100;" href="/product/teams">
+                   Teams Assistant
+                  </a>
+                  <a class="navbar-item" style="z-index: 100;" href="/product/customer">
+                   Customer Assistant
+                  </a>
+                  <a class="navbar-item" style="z-index: 100;" href="/product/automation">
+                   Automation
+                  </a>
                   <a class="navbar-item" style="z-index: 100;" href="/product/features">
                    Features
                   </a>

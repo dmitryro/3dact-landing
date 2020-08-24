@@ -4,6 +4,7 @@ import { VueHammer } from 'vue2-hammer'
 import Buefy from 'buefy';
 import 'buefy/dist/buefy.css';
 import './assets/css/main.css';
+import './assets/css/footer.css';
 import './script.js';
 import VueTilt from 'vue-tilt.js';
 import App from './App.vue';

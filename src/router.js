@@ -25,6 +25,24 @@ export default new Router({
       component: () => import('./views/Features.vue'),
     },
     {
+      path: '/product/teams',
+      name: 'teams',
+      meta: { layout: 'default' },
+      component: () => import('./views/Teams.vue'),
+    },
+    {
+      path: '/product/customer',
+      name: 'features',
+      meta: { layout: 'default' },
+      component: () => import('./views/Customer.vue'),
+    },
+    {
+      path: '/product/automation',
+      name: 'features',
+      meta: { layout: 'default' },
+      component: () => import('./views/Automation.vue'),
+    },
+    {
       path: '/product/integrations',
       name: 'integrations',
       meta: { layout: 'default' },

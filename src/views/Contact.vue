@@ -28,7 +28,7 @@
                                    </span>
                                  </header>
                                  <div class="mt-2" style="font-size:0.95em;">
-                                          <ul class="has-text-left"  style="list-style: none;list-style-type: none;">
+                                          <ul class="has-text-left bulletless">
                                               <li>Union Square 15</li>
                                               <li>New York, NY</li>
                                               <li><time datetime="2016-1-1">9:00 AM - 6:00 PM EST</time></li>
@@ -45,7 +45,7 @@
                                    </span>
                                  </header>
                                  <div class="mt-2" style="font-size:0.95em;">
-                                          <ul class="has-text-left"  style="list-style: none;list-style-type: none;">
+                                          <ul class="has-text-left bulletless">
                                               <li>Some Street, #no</li>
                                               <li>San-Francisco, CA</li>
                                               <li><time datetime="2016-1-1">9:00 AM - 6:00 PM PST</time></li>

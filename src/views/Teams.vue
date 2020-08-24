@@ -5,8 +5,8 @@
           <div class="columns">
               <div class="column is-1"></div>
               <div class="column is-11 has-text-left">
-                  <h1 class="title">Support</h1>
-                  <p class="subtitle">Get the support you need</p>
+                  <h1 class="title">Teams Solution</h1>
+                  <p class="subtitle">Teams</p>
               </div>
           </div>
           <div class="columns">
@@ -14,7 +14,7 @@
                 <div class="column is-5">
                    <div class="container">
                        <figure class="image is-fullwidth">
-                           <img src="../assets/svg/support.svg">
+                           <img src="../assets/svg/teams.svg">
                        </figure>
                    </div>
                    <div class="container mt-6">

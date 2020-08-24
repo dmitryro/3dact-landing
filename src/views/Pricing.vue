@@ -18,27 +18,40 @@
    <div class="columns">
          <div class="column is-1"></div>
          <div class="column is-10">
-
-
-    <div class="columns is-multiline">
-
-      <Package
-        v-for="info in infos"
-        :key="info.id"
-        v-bind:title="info.title"
-        v-bind:description="info.description"
-        v-bind:price="info.price"
-        v-bind:period="info.period"
-        v-bind:items="info.items"
-        v-bind:pricenote="info.pricenote"
-        v-bind:packagenote="info.packagenote"
-      />
-     </div>
-
-
-
-      </div>
-      <div class="column is-1"></div>
+             <div class="columns"> 
+                <div class="column is-5"></div>
+                   
+                <div class="column is-2">
+                           <div class="columns">
+                               <div class="column is-3 mr-4">
+                                  <span class="smaller">Monthly</span>
+                               </div>
+                               <div class="column is-3">
+                                  <b-switch model="toggle" passive-type="is-primary" type="is-info" v-hammer:tap="onToggle"></b-switch>
+                               </div>
+                               <div class="column is-5 ml-2">
+                                   <span class="smaller">Yearly</span>
+                               </div>
+                           </div>
+                </div>
+                <div class="column is-5"></div>
+             </div>
+             <div class="columns is-multiline">
+                 <Package
+                  v-for="info in infos"
+                  :key="info.id"
+                  v-bind:title="info.title"
+                  v-bind:toggle="toggle"
+                  v-bind:description="info.description"
+                  v-bind:price="info.price[index]"
+                  v-bind:period="info.period[index]"
+                  v-bind:items="info.items"
+                  v-bind:pricenote="info.pricenote"
+                  v-bind:packagenote="info.packagenote"
+                  />
+              </div>
+         </div>
+         <div class="column is-1"></div>
    </div>
 
   </section>
@@ -58,7 +71,20 @@ export default {
   data() {
     return {
       infos: [],
+      toggle: false,
+      index: 0,
     };
+  },
+  methods: {
+    onToggle() {
+       this.toggle = !this.toggle;
+        
+       if (this.toggle) {
+           this.index = 1;
+       } else {
+           this.index = 0;
+       }
+    }
   },
   mounted() {
     for (let i = 0; i < packages.length; i++) {
