@@ -66,7 +66,7 @@
 
 
 
-                <section id="new-item-form" v-recognizer:pan="onPan" v-recognizer:pan.right="onPanRight">
+                <section id="new-item-form">
                    
                     <b-field is-full label="Full Name" :type="isFullNameDanger" :message="FullNameMessage">
                           <b-input v-model="fullname" placeholder="Full Name" v-hammer:tap="onFullTap"></b-input>                        

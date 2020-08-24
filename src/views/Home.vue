@@ -1,53 +1,55 @@
 <template>
+
   <section class="hero is-fullheight">
     <div class="hero-body">
          <div class="columns">
-            <div class="column">
+            <div class="column is-5">
               <div class="container">
                 <figure class="image is-fullwidth">
                   <img src="../assets/svg/home.svg">
                 </figure>
               </div>
             </div>
-            <div class="column">
+            <div class="column is-7">
                <div class="container has-text-centered">
-                  <h1 class="title">Slack-first productivity application</h1>
-                   <p class="subtitle">Your knowledge your way.</p>
-                   <br/>
-                   <p> 3D Act is an AI-driven knowledge management platform that allows you 
-                       deliver your knowledge to every corner of the endless online world.</p>
-                   <div class="buttons is-centered">
-                       <b-button tag="a" href="https://discord.gg/KdTANuj" target="_blank" type="is-info" size="is-medium">
-                         <i class="fab fa-discord"></i>
-                         Sign Up
-                       </b-button>
-                       <b-tooltip
-                        type="is-light"
-                        label="Join the great endevour"
-                        position="is-bottom"
-                        size="is-medium"
-                        multilined
-                       >
-                       <b-button
-                        tag="router-link" :to="{ name: 'pricing' }"
-                        type="is-danger"
-                        size="is-medium"
-                       >
-                       <i class="fas fa-code"></i>
-                         Pricing
-                      </b-button>
-                     </b-tooltip>
-                  </div> 
-                </div> 
-             </div> 
+
+               <swiper ref="mySwiper" 
+                       :auto-update="true"
+                       :auto-destroy="true"
+                       :delete-instance-on-destroy="true"
+                       :cleanup-styles-on-destroy="true"
+                       @ready="handleSwiperReadied"
+                       @click-slide="handleClickSlide"
+                       v-model="index"
+                       :options="swiperOptions">
+                          <Article
+                             v-for="article in articles"
+                             :key="article.id"
+                             v-bind:title="article.title"
+                             v-bind:description="article.description"
+                          />
+                         <div class="swiper-pagination swiper-pagination-blue" slot="pagination"></div>
+               </swiper>
+
+               </div> 
+            </div> 
           </div> 
-        </div>
+      </div>
 
 
-    <div class="hero-body front">
+
+
+
+
+
+
+
+
+
+    <div class="hero-body">
          <div class="columns">
 
-            <div class="column">
+            <div class="column is-6">
              
               <div class="container">
 
@@ -126,12 +128,103 @@
 
               </div>
             </div>
-            <div class="column">
-                 here
+            <div class="column is-6">
+
+                  <h1 class="title">Slack-first productivity application</h1>
+                   <p class="subtitle">Your knowledge your way.</p>
+                   <br/>
+                   <p> 3D Act is an AI-driven knowledge management platform that allows you
+                       deliver your knowledge to every corner of the endless online world.</p>
+
             </div>
          </div>
     </div>
-
   </section>
 
 </template>
+<script>
+import '../assets/css/swiper.css'
+import api from '../api';
+import Article from '../components/Article.vue';
+const articles = api.getFrontArticles();
+
+import Vue from 'vue'
+import { Swiper as SwiperClass, Pagination, Mousewheel, Autoplay } from 'swiper/core'
+
+import getAwesomeSwiper from 'vue-awesome-swiper/dist/exporter'
+
+// Swiper modules
+SwiperClass.use([Pagination, Mousewheel, Autoplay])
+
+// -------------------------------------------------
+
+// Global use
+Vue.use(getAwesomeSwiper(SwiperClass))
+
+import { directive } from 'vue-awesome-swiper'
+const { Swiper } = getAwesomeSwiper(SwiperClass)
+
+// `@click-slide` event has special treatment for Swiper's loop mode, which is still available in loop mode
+
+export default {
+  name: 'Home',
+  components: {
+    Article,
+    Swiper,
+  },
+  data() {
+    return {
+      articles: articles,
+      index: 0,
+      swiperOptions: {
+                   notNextTick: true,
+                    loop: true,
+                    initialSlide: 0,
+                    autoplay: {
+                        delay: 13500,
+                        disableOnInteraction: true
+                    },
+                    speed: 1000,
+                    grabCursor: true,
+                    pagination: {
+                        el: ".swiper-pagination",
+                        clickable: true,
+                        type: "bullets"
+                    }
+      }
+    };
+  },
+  methods: {
+      navigate() {
+      },
+      handleSwiperReadied(swiper) {
+         console.log('Swiper was munted!', swiper)
+      },
+      handleClickSlide(index, reallyIndex) {
+         this.index = index;
+         console.log('Click slide!', index, reallyIndex)
+      }
+
+
+  },
+  computed: {
+      swiper() {
+        return this.$refs.mySwiper.$swiper
+      }
+  },
+  directives: {
+    swiper: directive
+  },
+  mounted() {
+    console.log('Current Swiper instance object', this.swiper)
+    //this.swiper.slideTo(3, 1000, false)
+  }
+};
+</script>
+<style>
+  footer {
+    margin-top: 50px;
+  }
+</style>
+
+

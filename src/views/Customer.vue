@@ -5,8 +5,8 @@
           <div class="columns">
               <div class="column is-1"></div>
               <div class="column is-11 has-text-left">
-                  <h1 class="title">Frequently Asked Questions</h1>
-                  <p class="subtitle">Some of the most frequently asked questions answered</p>
+                  <h1 class="title">Customer Assistant</h1>
+                  <p class="subtitle">Customer assistant described</p>
               </div>
           </div>
           <div class="columns">
@@ -14,7 +14,7 @@
                 <div class="column is-5">
                    <div class="container">
                        <figure class="image is-fullwidth">
-                           <img src="../assets/svg/questions.svg">
+                           <img src="../assets/svg/customer.svg">
                        </figure>
                    </div>
                    <div class="container mt-6">
