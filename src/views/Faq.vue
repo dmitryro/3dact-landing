@@ -18,11 +18,21 @@
                        </figure>
                    </div>
                    <div class="container mt-6">
+
+
                    </div>                                
                 </div> <!-- end column-->
                 <div class="column is-5">
-                 FAQ comes here
-                </div>
+                   <Faqs
+                    v-for="faq in faqs"
+                    :key="faq.id"
+                    v-bind:index="faq.index"
+                    v-bind:question="faq.question"
+                    v-bind:answer="faq.answer"
+                    />
+
+ 
+               </div>
                 <div class="column is-1"></div>
              </div> <!-- end columns -->
    
@@ -32,16 +42,22 @@
 </template>
 
 <script>
-//import api from '../api';
+import api from '../api';
+const faqs = api.getFaqs();
+
+import Faqs from '../components/Faqs.vue';
+
+
 
 
 export default {
   name: 'Project',
   components: {
+      Faqs,
   },
   data() {
     return {
-      infos: [],
+      faqs: faqs,
     };
   },
   mounted() {

@@ -5,11 +5,16 @@
       <div class="card-content">
         <div class="media card-adjusted">
           <div class="media-content  has-text-centered">
-            <p class="title is-4">{{ title }}</p>
+            <p class="title">{{ title }}</p>
           </div>
         </div>
         <div class="content has-text-left">
           <p id="desc">{{ description }}</p>
+          <ul>
+            <li v-for="point in points" :key="point.id">
+                {{ point }}
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -18,17 +23,25 @@
 </template>
 
 <script>
-
+//import Bulleted from '../components/Bulleted.vue';
 import { SwiperSlide } from 'vue-awesome-swiper'
 export default {
   name: 'Article',
   components: {
     SwiperSlide,
+    //Bulleted,
   },
   props: {
-    title: String,
-    description: String,
+    title:String,
+    description:String,
+    points:Array
   },
+  data() {
+    return {
+    };
+  },
+  mounted() {
+  }
 };
 </script>
 

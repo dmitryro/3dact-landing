@@ -25,6 +25,7 @@
                           <Article
                              v-for="article in articles"
                              :key="article.id"
+                             v-bind:points="article.points"
                              v-bind:title="article.title"
                              v-bind:description="article.description"
                           />
