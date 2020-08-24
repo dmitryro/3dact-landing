@@ -71,7 +71,7 @@ export default {
   data() {
     return {
       infos: [],
-      toggle: false,
+      toggle:false,
       index: 0,
     };
   },

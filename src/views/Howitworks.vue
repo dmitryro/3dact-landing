@@ -17,11 +17,17 @@
                            <img src="../assets/svg/howitworks.svg">
                        </figure>
                    </div>
-                   <div class="container mt-6">
-                   </div>                                
                 </div> <!-- end column-->
                 <div class="column is-5">
-                 FAQ comes here
+
+          <Howworks
+            v-for="how in howworks"
+            :key="how.id"
+            v-bind:index="how.index"
+            v-bind:title="how.title"
+            v-bind:description="how.description"
+          />
+
                 </div>
                 <div class="column is-1"></div>
              </div> <!-- end columns -->
@@ -32,16 +38,20 @@
 </template>
 
 <script>
-//import api from '../api';
 
+import api from '../api';
+const howworks = api.getHowworks();
+
+import Howworks from '../components/Howworks.vue';
 
 export default {
-  name: 'Project',
+  name: 'Howitworks',
   components: {
+     Howworks,
   },
   data() {
     return {
-      infos: [],
+      howworks: howworks,
     };
   },
   mounted() {

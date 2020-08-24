@@ -147,25 +147,17 @@ import '../assets/css/swiper.css'
 import api from '../api';
 import Article from '../components/Article.vue';
 const articles = api.getFrontArticles();
-
 import Vue from 'vue'
 import { Swiper as SwiperClass, Pagination, Mousewheel, Autoplay } from 'swiper/core'
-
 import getAwesomeSwiper from 'vue-awesome-swiper/dist/exporter'
-
 // Swiper modules
 SwiperClass.use([Pagination, Mousewheel, Autoplay])
-
 // -------------------------------------------------
-
 // Global use
 Vue.use(getAwesomeSwiper(SwiperClass))
-
 import { directive } from 'vue-awesome-swiper'
 const { Swiper } = getAwesomeSwiper(SwiperClass)
-
 // `@click-slide` event has special treatment for Swiper's loop mode, which is still available in loop mode
-
 export default {
   name: 'Home',
   components: {
@@ -187,9 +179,18 @@ export default {
                     speed: 1000,
                     grabCursor: true,
                     pagination: {
-                        el: ".swiper-pagination",
-                        clickable: true,
-                        type: "bullets"
+
+
+            el: '.swiper-pagination',
+            clickable: true,
+            //renderBullet(index, className) {
+            //  return `<span class="${className} swiper-pagination-blue">${index + 1}</span>`
+           // }
+
+
+            //           el: ".swiper-pagination",
+            //            clickable: true,
+            //            type: "bullets"
                     }
       }
     };
@@ -204,8 +205,6 @@ export default {
          this.index = index;
          console.log('Click slide!', index, reallyIndex)
       }
-
-
   },
   computed: {
       swiper() {
@@ -226,5 +225,3 @@ export default {
     margin-top: 50px;
   }
 </style>
-
-

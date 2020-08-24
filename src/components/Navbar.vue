@@ -75,10 +75,27 @@
                   </a>
               </b-navbar-dropdown>
 
+              <b-navbar-dropdown label="Company" class="navbar-item has-dropdown" style="z-index: 100;">
+                  <a class="navbar-item" style="z-index: 100;" href="/company/about">
+                    About Us
+                  </a>
+                  <a class="navbar-item" style="z-index: 100;" href="/company/team">
+                    Team
+                  </a>
+                  <a class="navbar-item" style="z-index: 100;" href="/company/press">
+                    Press Releases
+                  </a>
+                  <a class="navbar-item" style="z-index: 100;" href="/company/careers">
+                    Careers
+                  </a>
+                  <a class="navbar-item" style="z-index: 100;" href="/company/customers">
+                    Customers
+                  </a>
+                  <a class="navbar-item" style="z-index: 100;" href="/company/events">
+                    Events
+                  </a>
+              </b-navbar-dropdown>
 
-              <b-navbar-item tag="router-link" :to="{ name: 'customers' }">
-                  Customers
-              </b-navbar-item>
 
 
               <b-navbar-dropdown label="Resources" class="navbar-item has-dropdown" :to="{ name: 'resources' }" style="z-index: 100;" aria-controls="dropdown-menu2">

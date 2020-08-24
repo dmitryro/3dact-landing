@@ -133,7 +133,37 @@ export default new Router({
       component: () => import('./views/Resources.vue'),
     },
     {
-      path: '/customers',
+      path: '/company/about',
+      name: 'about',
+      meta: { layout: 'default' },
+      component: () => import('./views/About.vue'),
+    },
+    {
+      path: '/company/careers',
+      name: 'careers',
+      meta: { layout: 'default' },
+      component: () => import('./views/Careers.vue'),
+    },
+    {
+      path: '/company/team',
+      name: 'team',
+      meta: { layout: 'default' },
+      component: () => import('./views/Team.vue'),
+    },
+    {
+      path: '/company/press',
+      name: 'team',
+      meta: { layout: 'default' },
+      component: () => import('./views/Press.vue'),
+    },
+    {
+      path: '/company/events',
+      name: 'team',
+      meta: { layout: 'default' },
+      component: () => import('./views/Events.vue'),
+    },
+    {
+      path: '/company/customers',
       name: 'customers',
       meta: { layout: 'default' },
       component: () => import('./views/Customers.vue'),
