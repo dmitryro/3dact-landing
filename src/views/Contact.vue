@@ -87,7 +87,7 @@
                     <label class="label">Subject</label> 
                     <b-field is-full :type="isSubjectDanger" :message="SubjectMessage"> 
                         <b-select is-full class="is-fullwidth" v-hammer:tap="onSubjectTap" placeholder="Select Subject ..." v-model="subject" style="min-width:100% !important;">
-                          <option is-full class="is-fullwidth"
+                          <option is-full class="is-fullwidth"  v-hammer:tap="onSubjectTap"
                               v-for="option in subjects"
                               :value="option"
                               :key="option">
@@ -130,9 +130,6 @@
   </section>
 </template>
 <script>
-
-
-
 export default {
   name: 'Contact',
   props: {
@@ -182,7 +179,6 @@ export default {
             this.isSent = true;
     },
     adjust() {
-
       var element = document.getElementsByTagName("select")[0];
       if (element) {
           var parent = element.parentElement;
@@ -237,8 +233,8 @@ export default {
     isSubjectDanger() {
         if (!this.isSubjectLoaded) {
             return "is-success";
-        }
-        if (this.subjects.includes(this.subject)) {
+        } 
+        if (this.subject) {
             this.adjust();
             return "is-success";
         } else {
@@ -326,12 +322,13 @@ export default {
         }
     },
     formIsInDanger() {
-      if (this.isFullLoaded===false
-       || this.isTitleLoaded===false
-       || this.isSubjectLoaded===false
-       || this.isMessageLoaded===false
-       || this.isEmailLoaded===false
-       || this.isFullNameDanger === "is-danger" 
+      if (!this.isFullLoaded
+       || !this.isTitleLoaded
+       || !this.isSubjectLoaded
+       || !this.isMessageLoaded
+       || !this.isEmailLoaded) {
+       return true;
+      } else if (this.isFullNameDanger === "is-danger" 
        || this.isMessageDanger === "is-danger" 
        || this.isEmailDanger === "is-danger" 
        || this.isSubjectDanger === "is-danger"
