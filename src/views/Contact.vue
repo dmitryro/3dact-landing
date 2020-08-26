@@ -176,10 +176,29 @@ export default {
     onEmailTap() {
        this.isEmailLoaded = true;
     },
-    submitForm() {
+    submitForm(event) {
+            event.preventDefault(),
+            //process...             
+
             //this.$buefy.notification.open('We will be in touch soon!')
             client.post('api',  {"full_name":this.fullname, "email": this.email, "message": this.message, "title":this.title, "subject":this.subject});
             this.isSent = true;
+            this.isMessageLoaded = false;
+            this.isTitleLoaded = false;
+            this.isFullLoaded = false;
+            this.isSubjectLoaded = false;
+            this.isEmailLoaded = false;
+            this.message = "";
+            this.title = "";
+            this.subject = "";
+            this.email = "";
+            this.fullname = "";
+            this.isFullNameDanger = "is-success";
+            this.isTitleDanger = "is-success";
+            this.isEmailDanger = "is-success";
+            this.isSubjectDanger = "is-success";
+            this.isMessageDanger = "is-success";
+            event.target.reset();
     },
     adjust() {
       var element = document.getElementsByTagName("select")[0];
