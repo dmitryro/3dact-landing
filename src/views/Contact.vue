@@ -130,6 +130,8 @@
   </section>
 </template>
 <script>
+import client from '../services/client'
+
 export default {
   name: 'Contact',
   props: {
@@ -176,6 +178,7 @@ export default {
     },
     submitForm() {
             //this.$buefy.notification.open('We will be in touch soon!')
+            client.post('api',  {"full_name":this.fullname, "email": this.email, "message": this.message, "title":this.title, "subject":this.subject});
             this.isSent = true;
     },
     adjust() {
@@ -322,13 +325,7 @@ export default {
         }
     },
     formIsInDanger() {
-      if (!this.isFullLoaded
-       || !this.isTitleLoaded
-       || !this.isSubjectLoaded
-       || !this.isMessageLoaded
-       || !this.isEmailLoaded) {
-       return true;
-      } else if (this.isFullNameDanger === "is-danger" 
+      if (this.isFullNameDanger === "is-danger" 
        || this.isMessageDanger === "is-danger" 
        || this.isEmailDanger === "is-danger" 
        || this.isSubjectDanger === "is-danger"
