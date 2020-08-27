@@ -79,9 +79,6 @@
                   <a class="navbar-item" style="z-index: 100;" href="/company/about">
                     About Us
                   </a>
-                  <a class="navbar-item" style="z-index: 100;" href="/company/team">
-                    Team
-                  </a>
                   <a class="navbar-item" style="z-index: 100;" href="/company/press">
                     Press Releases
                   </a>
