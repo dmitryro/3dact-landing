@@ -20,9 +20,6 @@
             <b-navbar-item tag="router-link" :to="{ name: 'home' }">
               Home
             </b-navbar-item>
-
-
-
             <b-navbar-dropdown tag="router-link" :to="{ name: 'products' }" label="Product"  class="navbar-item has-dropdown" style="z-index: 100;">
                   <a class="navbar-item" style="z-index: 100;" href="/product/teams">
                    Teams Assistant
