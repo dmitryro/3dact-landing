@@ -106,22 +106,22 @@ front_articles.push({"title": "Have your conversations streamed, sanitized and a
 
 whyus.push({"index":"1",
             "title":"Improved customer experience",
-            "list":["Customers find more answers online and can do self-service as much as needed",
+            "list":["Customers find more answers online and can do self-service as much as needed.",
                     "Content is depersonalized and is reusable, then it gets personalized later as per need.",
                     "Targeted response in Slack or Teams becomes more focused and more human. More trust is built. ",
-                    "You're able to get the help just in place if you wish"]});
+                    "You're able to get the help just in place if you wish."]});
 
 
 whyus.push({"index":"2",
             "title":"Improved employee productivity",
-            "list":["Busy engineers spend less time doing repeated things and addressing repeated issues",
+            "list":["Busy engineers spend less time doing repeated things and addressing repeated issues.",
                     "Customer Success productivity increased - more time and better focus.",
                     "Friction eliminated, wellbeing improves and burnout rate falls."]});
 
 
 whyus.push({"index":"3",
             "title":"Improved brand competitiveness",
-            "list":["Happier customers mean more competitive brand and more revenue",   
+            "list":["Happier customers mean more competitive brand and more revenue.",   
                     "More productive and less stressed employees mean better business and stronger growth.",
                     "Now your team has more time to innovate and less need to worry about being outcompeted."]});
 
