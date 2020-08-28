@@ -11,22 +11,14 @@
         </div>
 
       <div class="column">
-      <div class="container has-text-centered">
+      <div class="container has-text-left">
         <h1 class="title">
           Careers
         </h1>
         <h2 class="subtitle">
-          Nous sommes une communauté de personnes intéressées par l'intelligence artificielle
+          At the present time we're not hiring yet.
         </h2>
         <div class="tile is-ancestor">
-          <Member
-            v-for="member in members" 
-            :key="member.id"
-            v-bind:profile="member.profile"
-            v-bind:username="member.username"
-            v-bind:bio="member.bio"
-            v-bind:avatar="member.avatar"
-          />
         </div>
       </div>
       </div>

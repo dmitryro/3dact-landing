@@ -35,6 +35,15 @@ faqs.push({"index":"3", "question":"Where do I learn", "answer": "You learn."});
 faqs.push({"index":"4", "question":"Where do I start", "answer": "You start."});
 faqs.push({"index":"5", "question":"How do I solve it", "answer": "You solve it."});
 
+var usecases = Array();
+usecases.push({"index":"1", "title":"Utilize internal knowledge", 
+               "description": "Build your internal knowledge base. Get the high quality responses that are sanitized, individualized and designed for the  best experience. Your questions may be non-trivial, ambiguous or open-ended, but they will get the best answer possible."});
+usecases.push({"index":"2", "title":"Push content to external venues", 
+               "description": "Have your answers published in a number of venues - Slack/Teams/Jira/Salesforce/Confluence/FAQ sections/online documentation/public sites. Turn some of your discussions into learning experience, pull requests, Jira tickets, online materials."});
+usecases.push({"index":"3", "title":"Provide interactive experience.", 
+               "description": "Integrate your favorite chat patform with knowledge base and Slack/Teams. Manage your customer support on a way that minimizes the need for live assistance. Motivate your customers to use as much self-service as they can. Syncronize with external resources."});
+
+
 var team = Array();
 team.push({"username":"Dmitry",
            "name": "Dmitry Roitman",
@@ -174,6 +183,9 @@ choose.push({"index":"5",
 
 
 export default {
+  getUsecases() {
+      return usecases;
+  },
   getChoose() {
       return choose;
   },

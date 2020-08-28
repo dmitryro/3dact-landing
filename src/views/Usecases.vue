@@ -21,7 +21,13 @@
                    </div>                                
                 </div> <!-- end column-->
                 <div class="column is-5">
-                 FAQ comes here
+                   <Usecase
+                    v-for="usecase in usecases"
+                    :key="usecase.id"
+                    v-bind:index="usecase.index"
+                    v-bind:title="usecase.title"
+                    v-bind:description="usecase.description"
+                    />
                 </div>
                 <div class="column is-1"></div>
              </div> <!-- end columns -->
@@ -32,25 +38,70 @@
 </template>
 
 <script>
-//import api from '../api';
 
+import api from '../api';
+import Usecase from '../components/Usecase.vue';
+const usecases = api.getUsecases();
 
 export default {
-  name: 'Project',
+  name: 'Usecases',
   components: {
+     Usecase,
   },
   data() {
     return {
-      infos: [],
+      usecases: usecases,
     };
   },
   mounted() {
   },
+
 };
 </script>
-
 <style>
-  footer {
+  .footer {
     margin-top: 50px;
+  }
+
+  .listitem {
+   }
+
+  .whybullet {
+    color: #707070;
+  }
+
+  .left {
+     float:left;
+     width:5%;
+   }
+
+  .right {
+     float:left;
+     width:94%;
+   }
+
+   .clear {
+     clear:both;
+   }
+  .choosedisc {
+     color:#1B7DF0;
+     font-size:0.8em;
+   }
+  .chooseblock {
+     margin-bottom: 1.0em; 
+   }
+  .chooselist {
+    list-style: disc;
+    font-size: 20px;
+    padding-left: 1.0em;
+    color: #1B7DF0;
+  }
+  .legendheader {
+    font-weight:bold;
+    font-size:1.4em;
+    margin-bottom: 1.0em;
+  }
+  .adjust {
+    margin-top: -1.7em;
   }
 </style>
