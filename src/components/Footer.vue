@@ -72,8 +72,8 @@
 
       </div>
       <div class="columns">
-        <div class="column is-1"></div>
-        <div class="container mb-3 ml-2">         
+        <div class="column is-4"></div>
+        <div class="container column s-4 has-text-centered">         
             <ul class="bulletless">
                 <li>Copyright © 2020 3D Act, Inc. All rights reserved.</li>
                 <li>
@@ -87,7 +87,7 @@
             </ul>
         </div>
 
-        <div class="column is-2"></div>
+        <div class="column is-4"></div>
       </div>  
   </div>
   </footer>

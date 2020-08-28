@@ -18,16 +18,40 @@
                        </figure>
                    </div>
                    <div class="container mt-6">
+                   <div class="adjust">
+                   <Howchoose
+                    v-bind:index="choose[1].index"
+                    v-bind:title="choose[1].title"
+                    v-bind:list="choose[1].list"
+                    />
+
+                   <Howchoose
+                    v-bind:index="choose[3].index"
+                    v-bind:title="choose[3].title"
+                    v-bind:list="choose[3].list"
+                    />
+                    </div>
                    </div>                                
                 </div> <!-- end column-->
                 <div class="column is-5">
                    <Howchoose
-                    v-for="how in choose"
-                    :key="how.id"
-                    v-bind:index="how.index"
-                    v-bind:title="how.title"
-                    v-bind:list="how.list"
+                    v-bind:index="choose[0].index"
+                    v-bind:title="choose[0].title"
+                    v-bind:list="choose[0].list"
                     />
+                   <Howchoose
+                    v-bind:index="choose[2].index"
+                    v-bind:title="choose[2].title"
+                    v-bind:list="choose[2].list"
+                    />
+                   <Howchoose
+                    v-bind:index="choose[4].index"
+                    v-bind:title="choose[4].title"
+                    v-bind:list="choose[4].list"
+                    />
+
+
+
 
                 </div>
                 <div class="column is-1"></div>
@@ -92,11 +116,18 @@ export default {
   .chooseblock {
      margin-bottom: 1.0em; 
    }
-
   .chooselist {
     list-style: disc;
     font-size: 20px;
     padding-left: 1.0em;
     color: #1B7DF0;
+  }
+  .legendheader {
+    font-weight:bold;
+    font-size:1.4em;
+    margin-bottom: 1.0em;
+  }
+  .adjust {
+    margin-top: -1.7em;
   }
 </style>
