@@ -21,7 +21,14 @@
                    </div>                                
                 </div> <!-- end column-->
                 <div class="column is-5">
-                 FAQ comes here
+                   <Howchoose
+                    v-for="how in choose"
+                    :key="how.id"
+                    v-bind:index="how.index"
+                    v-bind:title="how.title"
+                    v-bind:list="how.list"
+                    />
+
                 </div>
                 <div class="column is-1"></div>
              </div> <!-- end columns -->
@@ -35,22 +42,61 @@
 //import api from '../api';
 
 
+import api from '../api';
+import Howchoose from '../components/Howchoose.vue';
+const choose = api.getChoose();
+
 export default {
-  name: 'Project',
+  name: 'Howtochoose',
   components: {
+     Howchoose,
   },
   data() {
     return {
-      infos: [],
+      choose: choose,
     };
   },
   mounted() {
   },
 };
 </script>
-
 <style>
-  footer {
+  .footer {
     margin-top: 50px;
+  }
+
+  .listitem {
+   }
+
+  .whybullet {
+    color: #707070;
+  }
+
+  .left {
+     float:left;
+     width:5%;
+   }
+
+  .right {
+     float:left;
+     width:94%;
+   }
+
+   .clear {
+     clear:both;
+   }
+  .choosedisc {
+     color:#1B7DF0;
+     font-size:0.8em;
+   }
+  .chooseblock {
+     margin-bottom: 1.0em; 
+   }
+
+  .chooselist {
+    list-style: disc;
+    font-size: 20px;
+    padding-left: 1.0em;
+    color: #1B7DF0;
   }
 </style>

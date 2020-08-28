@@ -25,6 +25,9 @@ howworks.push({"index":"3","title":"Monitor", "description":"Use dashboard to de
 howworks.push({"index":"4","title":"Use", "description":"Get envolned when it's really needed, not all the time."});
 howworks.push({"index":"5","title":"Feedback", "description":"Provide feedback when it's needed automatically."});
 
+var choose = Array();
+
+
 var faqs = Array();
 faqs.push({"index":"1", "question":"How does it work", "answer": "It just works."});
 faqs.push({"index":"2", "question":"How do I install", "answer": "You install."});
@@ -132,7 +135,40 @@ whyus.push({"index":"4",
                      "Keeping it human-yet-advanced, automated-yet-friendly means being ahead with AI. ",
                      "The platform is there for your customers and you when you needed and to the full capacity possible."]});
 
+choose.push({"index":"1",
+             "title":"If you  want to evaluate.",
+             "list": ["Choose our free version to start with.", "This will give you the taste of the technology", 
+                      "You can always to uprade to a more advanced or a different product package.",
+                      "If you know exactly what feature set you need, and need an advice, please contact us!",
+                      "If you've been still undecided about what's best, let's chat and you'll help you make the right choice!"]});
+
+choose.push({"index":"2",
+             "title":"If you are an early stage startup.",
+             "list": ["Our initial suggestion is to start using our Start Up package.", 
+                      "If you have multiple teams, and they need different feature sets, let's connect and discuss.", 
+                      "If you have some unique use cases which we have not mentioned, or feel like they are related but not coverd, let's chat!",
+                      "If you've been still undecided about what's best, let's chat and we'll help you make the right choice!"]});
+
+choose.push({"index":"3",
+             "title":"You are funded startup with 50 and more employees.",
+             "list": ["Our initial suggestion is to start using our Start Up package.", 
+                      "If you have multiple teams, and they need different feature sets, let's connect and discuss.", 
+                      "If you have some unique use cases which we have not mentioned, or feel like they are related but not coverd, let's chat!",
+                      "If you've been still undecided about what's best, let's chat and we'll help you make the right choice!"]});
+
+choose.push({"index":"4",
+             "title":"You are an established enterprise with 150 and more  employees.",
+             "list": ["Our suggestion is to buy our enterprise package.", 
+                      "If you want to start small, you can also use our Start Up package, but we'll need to discuss some use cases.", 
+                      "If your enterprise has multiple departments, teams and has unique need in connecting them, let's discuss our extra functionalities for enterprises.",
+                      "If you've been still undecided about what's best, let's chat and we'll help you make the right choice!"]});
+
+
+
 export default {
+  getChoose() {
+      return choose;
+  },
   getFaqs() {
       return faqs;
   },
