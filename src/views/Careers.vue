@@ -31,12 +31,11 @@
 
 <script>
 import api from '../api';
-import Member from '../components/Member.vue';
+//import Member from '../components/Member.vue';
 
 export default {
   name: 'About',
   components: {
-    Member,
   },
   data() {
     return {
