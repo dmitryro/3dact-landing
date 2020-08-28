@@ -4,6 +4,8 @@ axios.defaults.baseURL = 'https://api.github.com';
 
 var front_articles = Array();
 
+var whyus = Array();
+
 var features = Array();
 features.push({"title":"Feature1",
                "description": "Description1"});
@@ -101,9 +103,41 @@ front_articles.push({"title": "Analytics unutilized", "description": "The observ
 
 front_articles.push({"title": "Have your conversations streamed, sanitized and actionalized from:", "description":"Integrate with third party tools:","points":["Atlassian (Jira, Confluence, Bitbucket)", "ELK", "Slack", "Sap", "Dropbox", "Salesforce", "Github", "Trello", "Kubernetes"]});
 
+
+whyus.push({"index":"1",
+            "title":"Improved customer experience",
+            "list":["Customers find more answers online and can do self-service as much as needed",
+                    "Content is depersonalized and is reusable, then it gets personalized later as per need.",
+                    "Targeted response in Slack or Teams becomes more focused and more human. More trust is built. ",
+                    "You're able to get the help just in place if you wish"]});
+
+
+whyus.push({"index":"2",
+            "title":"Improved employee productivity",
+            "list":["Busy engineers spend less time doing repeated things and addressing repeated issues",
+                    "Customer Success productivity increased - more time and better focus.",
+                    "Friction eliminated, wellbeing improves and burnout rate falls."]});
+
+
+whyus.push({"index":"3",
+            "title":"Improved brand competitiveness",
+            "list":["Happier customers mean more competitive brand and more revenue",   
+                    "More productive and less stressed employees mean better business and stronger growth.",
+                    "Now your team has more time to innovate and less need to worry about being outcompeted."]});
+
+
+whyus.push({"index":"4",
+            "title":"Cutting edge technology advantage",
+            "list": ["Being up to date with the science and the data means being ahead of the competitors.",
+                     "Keeping it human-yet-advanced, automated-yet-friendly means being ahead with AI. ",
+                     "The platform is there for your customers and you when you needed and to the full capacity possible."]});
+
 export default {
   getFaqs() {
       return faqs;
+  },
+  getWhyus() {
+      return whyus;
   },
   getHowworks() {
       return howworks;

@@ -21,7 +21,13 @@
                    </div>                                
                 </div> <!-- end column-->
                 <div class="column is-5">
-                 FAQ comes here
+                   <Whyuseus
+                    v-for="why in whyus"
+                    :key="why.id"
+                    v-bind:index="why.index"
+                    v-bind:title="why.title"
+                    v-bind:list="why.list"
+                    />
                 </div>
                 <div class="column is-1"></div>
              </div> <!-- end columns -->
@@ -32,16 +38,18 @@
 </template>
 
 <script>
-//import api from '../api';
-
+import api from '../api';
+import Whyuseus from '../components/Whyuseus.vue';
+const whyus = api.getWhyus();
 
 export default {
-  name: 'Project',
+  name: 'Whyus',
   components: {
+     Whyuseus,
   },
   data() {
     return {
-      infos: [],
+      whyus: whyus,
     };
   },
   mounted() {
@@ -50,7 +58,42 @@ export default {
 </script>
 
 <style>
-  footer {
+  .footer {
     margin-top: 50px;
+  }
+
+  .listitem {
+   }
+
+  .whybullet {
+    color: #707070;
+  }
+
+  .left {
+     float:left;
+     width:5%;
+   }
+
+  .right {
+     float:left;
+     width:94%;
+   }
+
+   .clear {
+     clear:both;
+   }
+  .whydisc {
+     color:#1B7DF0;
+     font-size:0.8em;
+   }
+  .whyblock {
+     margin-bottom: 1.0em; 
+   }
+
+  .whylist {
+    list-style: disc;
+    font-size: 20px;
+    padding-left: 1.0em;
+    color: #1B7DF0;
   }
 </style>
