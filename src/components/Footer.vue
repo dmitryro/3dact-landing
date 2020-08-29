@@ -36,7 +36,6 @@
           <span class="title">Company</span>
           <ul class="bulletless">
               <li><a href="/company/about">About Us</a></li>
-              <li><a href="/company/team">Team</a></li>
               <li><a href="/company/careers">Careers</a></li>
               <li><a href="/company/press">Press Releases</a></li>
               <li><a href="/resources/blog">Blog</a></li>
